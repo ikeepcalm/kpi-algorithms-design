@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<VBox prefHeight="485.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/11.0.14-internal"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.ua.ikeepcalm.ad.controllers.Controller">
+    <MenuBar prefHeight="0.0" prefWidth="656.0" VBox.vgrow="NEVER">
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem fx:id="aboutBTree" mnemonicParsing="false" text="About B-Tree"/>
+            <MenuItem fx:id="generateValues" mnemonicParsing="false" text="Generate Values"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <SplitPane dividerPositions="0.5" layoutX="6.0" layoutY="6.0" prefHeight="452.0" prefWidth="740.0">
+            <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="318.0">
+                <Text layoutX="28.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your e-mail "/>
+                <Text layoutX="26.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your username"/>
+                <Text layoutX="26.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="Finally enter your secure password "/>
+                <TextField fx:id="emailField" layoutX="26.0" layoutY="51.0" prefHeight="36.0" prefWidth="272.0"
+                           promptText="ikeepcalm@ukr.net"/>
+                <TextField fx:id="usernameField" layoutX="26.0" layoutY="117.0" prefHeight="36.0" prefWidth="272.0"
+                           promptText="ikeepcalm"/>
+                <PasswordField fx:id="passwordField" layoutX="28.0" layoutY="183.0" prefHeight="36.0" prefWidth="272.0"
+                               promptText="122833752"/>
+                <Button fx:id="saveButton" layoutX="77.0" layoutY="244.0" mnemonicParsing="false"
+                        text="Save to the contents"/>
+                <Button fx:id="deleteButton" layoutX="87.0" layoutY="293.0" mnemonicParsing="false"
+                        text="Delete this entity" textFill="RED"/>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="419.0">
+                <Text layoutX="158.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contents preview"/>
+                <Button fx:id="searchButton" layoutX="256.0" layoutY="35.0" mnemonicParsing="false" prefHeight="36.0"
+                        prefWidth="92.0" text="Search"/>
+                <Button fx:id="refreshButton" layoutX="357.0" layoutY="35.0" mnemonicParsing="false" prefHeight="36.0"
+                        prefWidth="41.0" text="🗘"/>
+                <TextField fx:id="searchField" layoutX="22.0" layoutY="35.0" prefHeight="36.0" prefWidth="227.0"
+                           promptText="Primary key"/>
+                <Pagination fx:id="pagination" layoutX="16.0" layoutY="81.0" prefHeight="354.0" prefWidth="376.0"/>
+                <TableView fx:id="tableView" layoutX="23.0" layoutY="83.0" prefHeight="260.0" prefWidth="376.0">
+                    <columns>
+                        <TableColumn fx:id="idColumn" maxWidth="60" text="id"/>
+                        <TableColumn fx:id="emailColumn" maxWidth="123" text="Email"/>
+                        <TableColumn fx:id="usernameColumn" maxWidth="120" text="Username"/>
+                        <TableColumn fx:id="passwordColumn" minWidth="100" text="Password"/>
+                    </columns>
+                </TableView>
+            </AnchorPane>
+        </SplitPane>
+    </AnchorPane>
+</VBox>
